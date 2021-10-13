@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand ms-xxl-5 fw-bold">ToDoList App</a>
+    <div class="me-xxl-5">
+      <form class="d-flex" [formGroup]="taskForm" (ngSubmit)="createTask()">
+        <input class="form-control me-4" type="text" formControlName="name" placeholder="Add here ....">
+        <button class="btn btn-danger" type="submit">Add</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <table class="table table-hover shadow-lg">
+        <tbody class="border-1">
+          <tr *ngFor="let task of tasks" class="align-middle">
+            <td class="text-black text-capitalize fw-bold  ps-4">{{task.name}}</td>
+            <td class="pe-4"><button type="button" class="btn btn-danger float-end" (click)="deleteTask(task.id)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
